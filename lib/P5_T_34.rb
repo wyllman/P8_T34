@@ -9,5 +9,14 @@ module P5_T_34
         @correct = correctI
         @distractor = distractorI
      end
+     
+     def questioning
+        return text
+     end
+
+     def answers
+        return (distractor + [correct]).shuffle
+     end
+
   end
 end
