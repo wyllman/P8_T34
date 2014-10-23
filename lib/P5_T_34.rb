@@ -1,5 +1,7 @@
 require "P5_T_34/version"
 
-module P5T34
-  # Your code goes here...
+module P5_T_34
+  class Question
+     attr_reader :text, :correct, :distractor
+  end
 end
