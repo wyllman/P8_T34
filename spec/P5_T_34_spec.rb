@@ -20,6 +20,18 @@ module P5_T_34
 				expect(@c.distractor).to eq([1, 5, 6])
 			end
 		end
+
+		context "Methods test" do
+                        it 'checking existing methods' do
+				expect(@c).to respond_to(:questioning)
+				expect(@c).to respond_to(:answers)
+			end
+			it 'get question text' do
+				expect(@c.questioning).to eq("2+5=?")
+				expect(@c.answers.length).to eq(4)
+			end
+
+		end
 	end
 end
 
