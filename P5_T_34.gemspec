@@ -20,4 +20,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  #PERSONAL: Para poder usar rspec
+  spec.add_development_dependency "rspec", "~> 2.1"
 end
