@@ -80,4 +80,7 @@ rake spec # Run RSpec code examples
 
 ¿Qué signiﬁcado tienen las optiones de rspec --format documentation y --format html?
 
+Simplemente modifican el formato de salida de los datos, el --format documentation es ideal para volcarlo en un archivo de texto
+el --format html es ideal para ejecutarlo directamente en un navegador o volcarlo en un archivo .html
+
 4. Escribir la dirección http del repositorio que se ha creado en Bitbucket en la tarea habilitada en el Campus Virtual.
