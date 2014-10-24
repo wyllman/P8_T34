@@ -25,7 +25,7 @@ module P5_T_34
                         it 'checking existing methods' do
 				expect(@c).to respond_to(:questioning)
 				expect(@c).to respond_to(:answers)
-				expect(@c).to respond_to(:print)
+				expect(@c).to respond_to(:to_s)
 			end
 			it 'get question text' do
 				expect(@c.questioning).to eq("2+5=?")

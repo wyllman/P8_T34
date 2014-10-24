@@ -17,9 +17,10 @@ module P5_T_34
      def answers
         return (distractor + [correct]).shuffle
      end
-     def print
-	#code goes here
+     def to_s
+	result = text + "\n"
+	answers.each{|i| result += i + "\n"}
+	return result
      end
-
   end
 end
