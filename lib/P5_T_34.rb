@@ -7,7 +7,7 @@ module P5_T_34
      def initialize (textI, correctI, distractorI)
         @text = textI
         @correct = correctI
-        @distractor = distractorI
+        @distractor = distractorI.map{|i| i.to_s}
      end
      
      def questioning
@@ -16,6 +16,9 @@ module P5_T_34
 
      def answers
         return (distractor + [correct]).shuffle
+     end
+     def print
+	#code goes here
      end
 
   end

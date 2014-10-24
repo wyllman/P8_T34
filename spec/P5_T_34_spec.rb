@@ -17,7 +17,7 @@ module P5_T_34
 			it 'checking initialize' do
 				expect(@c.text).to eq("2+5=?")
 				expect(@c.correct).to eq("Ninguna es correcta")
-				expect(@c.distractor).to eq([1, 5, 6])
+				expect(@c.distractor).to eq(["1","5","6"])
 			end
 		end
 
@@ -30,7 +30,9 @@ module P5_T_34
 			it 'get question text' do
 				expect(@c.questioning).to eq("2+5=?")
 				expect(@c.answers.length).to eq(4)
-				expect(@c.print).to eq(".+\n.+\n.+\n.+\n.+")
+				#@c.answers.each{|i| expect(i).not_to eq(nil)}
+				@c.answers.each{|i| expect(i).to match(/.+/)}
+				expect(@c.to_s).to match( /^(2\+5=\?)\n(.+)\n(.+)\n(.+)\n(.+)/ )
 			end
 
 		end
