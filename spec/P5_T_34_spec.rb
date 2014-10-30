@@ -40,15 +40,15 @@ module P5_T_34
 	
 	describe 'Exam' do 
 	   before :each do
-	     #@c = P5_T_34::Question.new("2+5=?","Ninguna es correcta", [1, 5, 6] )
-	     #@n = Node.new(@c, nil)
+	     @c = P5_T_34::Question.new("2+5=?","Ninguna es correcta", [1, 5, 6] )
+	     @n = Node.new(@c, nil)
 	   end
 	   
 	   context "Class node test" do
 	     it 'checking class Node' do
 	       expect(Node).to respond_to(:new)
-	       expect(Node).to respond_to(:value)
-	       expect(Node).to respond_to(:next)
+	       expect(@n).to respond_to(:value)
+	       expect(@n).to respond_to(:next)
 	     end
 	     
 	   end
