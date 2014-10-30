@@ -80,7 +80,6 @@ module P5_T_34
 
              it 'Checking class LList to_node method' do
                expect(LList).to respond_to(:to_node)
-               #aux = LList.to_node (23)
                expect(LList.to_node(90)).to be_a(Node) 
                expect(LList.to_node(90).value).to eq(90)
              end  	     
