@@ -73,6 +73,7 @@ module P5_T_34
 	     it 'Checking class LList methods' do 
 	       expect(@l).to respond_to(:push)
 	       expect(@l.push(@n)).to eq(2)
+	       expect(@l.push(@n)).to eq(3)
 	       
 	     end
 	     
