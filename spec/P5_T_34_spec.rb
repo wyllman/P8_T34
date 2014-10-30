@@ -51,10 +51,18 @@ module P5_T_34
 	       expect(@n).to respond_to(:next)
 	     end
 	     
-	    it 'checking class Node initialize' do
-	      expect(@n.value).to eq(@c)
-	      expect(@n.next).to eq(nil)
-	    end
+	     it 'checking class Node initialize' do
+	       expect(@n.value).to eq(@c)
+	       expect(@n.next).to eq(nil)
+	     end
+	     
+	   end
+	   
+	   context "Class LList test" do
+	     it 'checking class LList' do
+	       expect(LList).to respond_to(:new)
+	       
+	     end
 	     
 	   end
 	  
