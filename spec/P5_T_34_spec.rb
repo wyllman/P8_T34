@@ -42,7 +42,7 @@ module P5_T_34
 	   before :each do
 	     @q = P5_T_34::Question.new("2+5=?","Ninguna es correcta", [1, 5, 6] )
 	     @n = Node.new(@q, nil)
-	     @l = LList.new()
+	     @l = LList.new(@n)
 	   end
 	   
 	   context "Class node test" do
@@ -66,6 +66,9 @@ module P5_T_34
 	       
 	     end
 	     
+	     it 'checking class LList initialize' do
+	       expect(@l.top).to eq(@n)
+	     end
 	   end
 	  
 	end
