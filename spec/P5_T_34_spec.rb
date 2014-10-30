@@ -74,7 +74,7 @@ module P5_T_34
 	       expect(@l).to respond_to(:push)
 	       expect(@l.push(@n)).to eq(2)
 	       expect(@l.push(@n)).to eq(3)
-	       
+	       expect(@l.push(@n, @n, @n)).to eq(6)
 	     end
 	     
 	   end

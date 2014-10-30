@@ -12,11 +12,12 @@ module P5_T_34
       @size = 1
     end
     
-    
-    def push (newNode)
+    #Insert node or nodes to LList
+    def push (newNode, *args)
       @tail.next = newNode
       @tail = newNode
       @size += 1
+      args.each { |x| push(x) }
       @size
     end
     
