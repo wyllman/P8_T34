@@ -11,17 +11,27 @@ module P5_T_34
 
     
     def initialize (topI)
-      @top = topI
-      @tail = topI
+      @top = LList::to_node(topI)
+      @tail = @top
       @size = 1
     end
+
+    # Descripción: Método de clase encargado de convertir
+    #   cualquier tipo de dato de entrada a un objeto de
+    #   tipo Node. En caso de que el objeto de entrada ya
+    #   sea de tipo Node se retorna el mismo objeto.
+    def self.to_node (value)
+       if (value.is_a? Node) then return value end
+       
+       return Node.new(value, nil)
+    end
     
-    # Descripción: Método push que permite insertar uno ó varios elementos en la lista
-    #Insert node or nodes to LList
+    # Descripción: Método push que permite insertar uno o 
+    #   varios elementos en la lista
     def push (newNode, *args)
-      raise ArgumentError, "Los elementos deben ser del mismo tipo que top" unless newNode.is_a? @top.class
-      @tail.next = newNode
-      @tail = newNode
+      #raise ArgumentError, "Los elementos deben ser de tipo Node" unless newNode.is_a? Node #@top.class
+      @tail.next = LList::to_node(newNode)
+      @tail = @tail.next
       @size += 1
       args.each { |x| push(x) }
       @size
