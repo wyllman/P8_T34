@@ -69,6 +69,13 @@ module P5_T_34
 	     it 'checking class LList initialize' do
 	       expect(@l.top).to eq(@n)
 	     end
+	     
+	     it 'Checking class LList methods' do 
+	       expect(@l).to respond_to(:push)
+	       expect(@l.push(@n)).to eq(2)
+	       
+	     end
+	     
 	   end
 	  
 	end
