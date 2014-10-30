@@ -37,6 +37,16 @@ module P5_T_34
       @size
     end
     
+    # Descripción: Método que retorna el primer elemento
+    # y lo elimina de la lista
+    def pop
+       #TODO
+    end
+
+    # Descripión: sobrecarga del operador de acceso []
+    #   para la clase
+    def [] (key)
+       #TODO
+    end
   end
-  
 end
