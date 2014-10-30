@@ -20,3 +20,4 @@ tmp
 *.o
 *.class
 *swp
+*.DS_Store

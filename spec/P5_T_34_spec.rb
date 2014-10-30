@@ -41,13 +41,13 @@ module P5_T_34
 	describe 'Exam' do 
 	   before :each do
 	     @q = P5_T_34::Question.new("2+5=?","Ninguna es correcta", [1, 5, 6] )
-	     @n = Node.new(@q, nil)
-	     @l = LList.new(@n)
+	     @n = P5_T_34::Node.new(@q, nil)
+	     @l = P5_T_34::LList.new(@n)
 	   end
 	   
 	   context "Class node test" do
 	     it 'checking class Node' do
-	       expect(Node).to respond_to(:new)
+	       expect(P5_T_34::Node).to respond_to(:new)
 	       expect(@n).to respond_to(:value)
 	       expect(@n).to respond_to(:next)
 	     end
@@ -61,7 +61,7 @@ module P5_T_34
 	   
 	   context "Class LList test" do
 	     it 'checking class LList' do
-	       expect(LList).to respond_to(:new)
+	       expect(P5_T_34::LList).to respond_to(:new)
 	       expect(@l).to respond_to(:top)
 	       
 	     end
@@ -75,6 +75,7 @@ module P5_T_34
 	       expect(@l.push(@n)).to eq(2)
 	       expect(@l.push(@n)).to eq(3)
 	       expect(@l.push(@n, @n, @n)).to eq(6)
+	       expect{@l.push(2014)}.to raise_error(ArgumentError) #Probando inserción de argumentos inválidos
 	     end
 	     
 	   end
