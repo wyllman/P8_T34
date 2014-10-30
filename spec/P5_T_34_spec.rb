@@ -5,34 +5,34 @@ require 'P5_T_34'
 module P5_T_34
 	describe 'Question' do
 		before :each do
-      			@c = P5_T_34::Question.new("2+5=?","Ninguna es correcta", [1, 5, 6] )
+      			@q = P5_T_34::Question.new("2+5=?","Ninguna es correcta", [1, 5, 6] )
     		end
 		context "Constructors test" do
 			it 'checking atributes' do
-        	   		expect(@c).to respond_to(:text)
-				expect(@c).to respond_to(:correct)
-				expect(@c).to respond_to(:distractor)
+        	   		expect(@q).to respond_to(:text)
+				expect(@q).to respond_to(:correct)
+				expect(@q).to respond_to(:distractor)
         		end
 
 			it 'checking initialize' do
-				expect(@c.text).to eq("2+5=?")
-				expect(@c.correct).to eq("Ninguna es correcta")
-				expect(@c.distractor).to eq(["1","5","6"])
+				expect(@q.text).to eq("2+5=?")
+				expect(@q.correct).to eq("Ninguna es correcta")
+				expect(@q.distractor).to eq(["1","5","6"])
 			end
 		end
 
 		context "Methods test" do
                         it 'checking existing methods' do
-				expect(@c).to respond_to(:questioning)
-				expect(@c).to respond_to(:answers)
-				expect(@c).to respond_to(:to_s)
+				expect(@q).to respond_to(:questioning)
+				expect(@q).to respond_to(:answers)
+				expect(@q).to respond_to(:to_s)
 			end
 			it 'get question text' do
-				expect(@c.questioning).to eq("2+5=?")
-				expect(@c.answers.length).to eq(4)
-				#@c.answers.each{|i| expect(i).not_to eq(nil)}
-				@c.answers.each{|i| expect(i).to match(/.+/)}
-				expect(@c.to_s).to match( /^(2\+5=\?)\n(.+)\n(.+)\n(.+)\n(.+)/ )
+				expect(@q.questioning).to eq("2+5=?")
+				expect(@q.answers.length).to eq(4)
+				#@q.answers.each{|i| expect(i).not_to eq(nil)}
+				@q.answers.each{|i| expect(i).to match(/.+/)}
+				expect(@q.to_s).to match( /^(2\+5=\?)\n(.+)\n(.+)\n(.+)\n(.+)/ )
 			end
 
 		end
@@ -40,8 +40,9 @@ module P5_T_34
 	
 	describe 'Exam' do 
 	   before :each do
-	     @c = P5_T_34::Question.new("2+5=?","Ninguna es correcta", [1, 5, 6] )
-	     @n = Node.new(@c, nil)
+	     @q = P5_T_34::Question.new("2+5=?","Ninguna es correcta", [1, 5, 6] )
+	     @n = Node.new(@q, nil)
+	     @l = LList.new()
 	   end
 	   
 	   context "Class node test" do
@@ -52,7 +53,7 @@ module P5_T_34
 	     end
 	     
 	     it 'checking class Node initialize' do
-	       expect(@n.value).to eq(@c)
+	       expect(@n.value).to eq(@q)
 	       expect(@n.next).to eq(nil)
 	     end
 	     
@@ -61,6 +62,7 @@ module P5_T_34
 	   context "Class LList test" do
 	     it 'checking class LList' do
 	       expect(LList).to respond_to(:new)
+	       expect(@l).to respond_to(:top)
 	       
 	     end
 	     
