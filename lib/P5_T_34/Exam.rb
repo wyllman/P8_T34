@@ -17,10 +17,12 @@ module P5_T_34
        aux = "Título del examen: " + @top.value + "\n"
        aux += "------------------------------------------------- \n"
        act = @top.next
+       cont = 1
        while (act != nil)
-	 aux += act.to_s
+	 aux += cont + ") " + act.to_s
 	 aux += " \n ++++++++++++++++++++++++++++++++++ \n"
 	 act = act.next
+	 cont += 1
        end
        return aux
      end
