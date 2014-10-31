@@ -14,6 +14,7 @@ module P5_T_34
 
     
     def initialize (topI)
+      raise ArgumentError, "No puede ser nil" unless (topI != nil)
       @top = LList::to_node(topI)
       @tail = @top
       @size = 1
@@ -43,7 +44,9 @@ module P5_T_34
     # Descripción: Método que retorna el primer elemento
     # y lo elimina de la lista
     def pop
-       #TODO
+       aux = @top
+       @top = @top.next
+       return aux
     end
 
     # Descripión: sobrecarga del operador de acceso []
