@@ -19,7 +19,7 @@ module P5_T_34
        act = @top.next
        cont = 1
        while (act != nil)
-	 aux += cont + ") " + act.to_s
+	 aux += cont.to_s + ") " + act.value.to_s
 	 aux += " \n ++++++++++++++++++++++++++++++++++ \n"
 	 act = act.next
 	 cont += 1
