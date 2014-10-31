@@ -86,6 +86,7 @@ module P5_T_34
 	     
              it 'Checking class LList pop method' do
                expect(@l).to respond_to(:pop)
+	       expect(@l.pop).to eq(@n)
              end
 
              it 'Checking class LList [] operator' do
