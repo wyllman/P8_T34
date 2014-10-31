@@ -32,13 +32,13 @@ module P5_T_34
 				expect(@q.answers.length).to eq(4)
 				#@q.answers.each{|i| expect(i).not_to eq(nil)}
 				@q.answers.each{|i| expect(i).to match(/.+/)}
-				expect(@q.to_s).to match( /^(2\+5=\?)\n(.+)\n(.+)\n(.+)\n(.+)/ )
+				expect(@q.to_s).to match( /^(2\+5=\?)\n(.+)\n(.+)\n(.+)\n(.+)/ )				
 			end
 
 		end
 	end
 	
-	describe 'Exam' do 
+	describe 'LList' do 
 	   before :each do
 	     @q = P5_T_34::Question.new("2+5=?","Ninguna es correcta", [1, 5, 6] )
 	     @n = P5_T_34::Node.new(@q, nil)

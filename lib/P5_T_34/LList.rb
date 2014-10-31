@@ -2,6 +2,9 @@ require "P5_T_34/version"
 
 
 module P5_T_34
+  # Create a Struct with :value and :next
+  Node = Struct.new(:value, :next)
+  
   # Descripción: Clase lista enlazada.
   #   almacena un nodo top como cabeza de la 
   #   misma y el número de elementos que 
