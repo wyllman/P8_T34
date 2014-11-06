@@ -45,12 +45,12 @@ module P5_T_34
 	     
 	     it 'Checking class LList push method' do 
                expect(@l).to respond_to(:push)
-	       expect(@l.push(@n)).to eq(2)
-	       expect(@l.push(@n)).to eq(3)
-	       expect(@l.push(@n, @n, @n)).to eq(6)
+	       expect(@l.push(7)).to eq(2)
+	       expect(@l.push(8)).to eq(3)
+	       expect(@l.push(9, 10, 11)).to eq(6)
 	       # Modf
 	       expect(@l.top.prev).to eq(nil)
-	       expect(@l.tail.prev).to eq(@n)
+	       expect(@l.tail.prev.value).to eq(10)
 	     end
 
              it 'Checking class LList to_node method' do
@@ -63,7 +63,10 @@ module P5_T_34
 	     
              it 'Checking class LList pop method' do
                expect(@l).to respond_to(:pop)
+	       # Modf
+	       @l.push(7)
 	       expect(@l.pop).to eq(@n)
+	       # Modf
 	       expect(@l.top.prev).to eq(nil)
              end
 
