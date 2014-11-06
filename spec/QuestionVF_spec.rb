@@ -5,7 +5,7 @@ require 'P5_T_34'
 module P5_T_34
 	describe 'QuestionVF' do
 	  before :each do
-	    @q = QuestionVF.new("¿Es verdadero?",True)
+	    @q = QuestionVF.new("¿Es verdadero?", true)
 	  end
 	  context 'Constructor test' do
 	    it "Checking initialize" do
