@@ -79,6 +79,11 @@ module P5_T_34
 			it 'Basic methods' do
 		 	#respond_to
 		 	expect(@l).to respond_to(:each)
+		 	expect(@l).to respond_to(:count)
+		 	expect(@l).to respond_to(:to_a)
+		 	#Pruebas
+		 	expect(@l.count).to eq(1)
+		 	expect(@l.to_a.size).to eq(1)
 		 	
 		 	end
 		end
