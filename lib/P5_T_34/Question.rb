@@ -32,7 +32,7 @@ module P5_T_34
 	    answers.each{|i| result += cont.chr + ") " + i + "\n"; cont+=1}
 	    return result
      end
-     def <=> (0ther)
+     def <=> (other)
          #TO-DO
      end
    end
