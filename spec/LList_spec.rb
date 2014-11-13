@@ -84,6 +84,7 @@ module P5_T_34
 		 	#Pruebas
 		 	expect(@l.count).to eq(1)
 		 	expect(@l.to_a.size).to eq(1)
+		 	puts @l.to_a
 		 	
 		 	end
 		end

@@ -13,6 +13,8 @@ module P5_T_34
   #   misma y el número de elementos que 
   #   contiene. 
   class LList
+    include Enumerable
+    
     attr_reader :top, :tail, :size
 
     
@@ -61,6 +63,15 @@ module P5_T_34
     #   para la clase
     def [] (key)
        #TODO
+    end
+    
+    # Método each.
+    def each
+      aux = top
+      while aux != nil do
+        yield aux
+        aux = aux.next
+      end
     end
   end
 end
