@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/wyllman/P8_T34.svg?branch=master)](https://travis-ci.org/wyllman/P8_T34)
+
 # P5T34
 
 TODO: Write a gem description
