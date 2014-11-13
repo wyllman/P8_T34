@@ -33,7 +33,7 @@ module P5_T_34
 	    return result
      end
      def <=> (other)
-         #TO-DO
+         @text.size <=> other.text.size
      end
    end
 end
