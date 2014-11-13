@@ -40,12 +40,14 @@ module P5_T_34
 			it 'Basic methods' do
 		 		q2 = P5_T_34::Question.new("201+205=?","Ninguna es correcta", [22, 311, 0] )
 		 		q3 = P5_T_34::Question.new("201+205=?","Ninguna es correcta", [22, 311, 0] )
+		 		#Respon_to
 		 		expect(@q).to respond_to(:==)
 		 		expect(@q).to respond_to(:>)
 		 		expect(@q).to respond_to(:<)
 		 		expect(@q).to respond_to(:>=)
 		 		expect(@q).to respond_to(:<=)
 		 		expect(@q).to respond_to(:between?)
+		 		#Pruebas
 		 		expect(@q == q2).to eq(false)
 		 		expect(q2 == q3).to eq(true)
 		 		expect(@q < q2).to eq(true)
