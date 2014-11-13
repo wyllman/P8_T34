@@ -22,4 +22,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   #PERSONAL: Para poder usar rspec
   spec.add_development_dependency "rspec", "~> 2.1"
+  #Para utilizar Guard
+  spec.add_development_dependency "guard"
+  spec.add_development_dependency "guard-rspec"
+  spec.add_development_dependency "guard-bundler"
 end
