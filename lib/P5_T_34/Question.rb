@@ -5,6 +5,8 @@ module P5_T_34
    # una pregunta, una respuesta correcta, y varias 
    # respuestas incorrectas ó distractor
    class Question
+     include Comparable  
+       
      attr_reader :text, :correct, :distractor
 
      def initialize (textI, correctI, distractorI)
@@ -26,9 +28,12 @@ module P5_T_34
      #Convierte las preguntas y las respuestas en una cadena de texto
      def to_s
         cont = 97
-	result = text + "\n"
-	answers.each{|i| result += cont.chr + ") " + i + "\n"; cont+=1}
-	return result
+	    result = text + "\n"
+	    answers.each{|i| result += cont.chr + ") " + i + "\n"; cont+=1}
+	    return result
+     end
+     def <=> (0ther)
+         #TO-DO
      end
    end
 end
