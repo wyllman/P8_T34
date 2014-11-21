@@ -1,6 +1,10 @@
 # P5T34
 
-TODO: Write a gem description
+
+Esta gema implementa la estructura y metodos necesarios para la construcción de una lista de preguntas ó 'Examen'
+## Travis_Status
+
+[![Build Status](https://travis-ci.org/alu0100611120/P8_T34.svg?branch=master)](https://travis-ci.org/alu0100611120/P8_T34)
 
 ## Installation
 
