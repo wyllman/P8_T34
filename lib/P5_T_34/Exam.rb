@@ -6,10 +6,12 @@ module P5_T_34
    # Define un tipo de LList específico para la creación de exámenes
    # y los métodos necesarios para su manejo
    class Exam < LList
-     
+     attr_reader :correct, :incorrect, :calification
      # Crea una lista cuyo primer nodo es el nombre ó
      # identificador del examen
      def initialize(nameI)
+         @correct = 0
+         @incorrect = 0
        super
      end
      
@@ -20,12 +22,23 @@ module P5_T_34
        act = @top.next
        cont = 1
        while (act != nil)
-	 aux += cont.to_s + ") " + act.value.to_s
-	 aux += " \n ++++++++++++++++++++++++++++++++++ \n"
-	 act = act.next
-	 cont += 1
+	        aux += cont.to_s + ") " + act.value.to_s
+	        aux += " \n ++++++++++++++++++++++++++++++++++ \n"
+	        act = act.next
+	        cont += 1
        end
        return aux
+     end
+     
+     #Muestra el examen pregunta a pregunta, recibe una respuesta y calcula la calificacion obtenida
+     def start()
+         puts "Titulo del examen: " + @top.value + "\n ---------------------------------------------------------------------- \n"
+         act = @top.next
+         cont = 1
+         while (act != nil)
+            puts cont + ")  " + act.value.to_s + "\n ------------------------ \n Respuesta: "
+            
+         end
      end
    end
 end
