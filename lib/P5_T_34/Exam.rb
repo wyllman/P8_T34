@@ -15,7 +15,7 @@ module P5_T_34
      
      #Devuelve un examen entero, comvertido a string
      def to_s
-       aux = "Título del examen: " + @top.value + "\n"
+       aux = "Titulo del examen: " + @top.value + "\n"
        aux += "------------------------------------------------- \n"
        act = @top.next
        cont = 1

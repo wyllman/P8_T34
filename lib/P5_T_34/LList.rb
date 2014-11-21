@@ -69,7 +69,7 @@ module P5_T_34
     def each
       aux = top
       while aux != nil do
-        yield aux
+        yield aux.value
         aux = aux.next
       end
     end

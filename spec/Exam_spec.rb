@@ -6,7 +6,7 @@ module P5_T_34
 	describe 'Exam' do
 	  before :each do
 	    @ex = Exam.new("Prueba 1")
-	    @q1 = Question.new("¿Cuál es la salida del siguiente código Ruby? \n class Xyz \n \t def pots \n \t\t @nice \n \t end \n end \n xyz = Xyz.new \n p xyz.pots","nil", ["#<Xyz:0x95d7718>", "0", "Ninguna de las anteriores"])
+	    @q1 = Question.new("¿Cual es la salida del siguiente codigo Ruby? \n class Xyz \n \t def pots \n \t\t @nice \n \t end \n end \n xyz = Xyz.new \n p xyz.pots","nil", ["#<Xyz:0x95d7718>", "0", "Ninguna de las anteriores"])
 	    @q2 = QuestionVF.new("¿Es válida la siguiente definición de un hash en Ruby? \n hash_raro = { \n\t [1,2,3] => Object.new(), \n\t Hash.new => :toto \n }", true)
 	    @q3 = Question.new("¿Cuál es la salida del siguiente código Ruby? \n class Array \n\t def say_hi \n\t\t \"HEY!\" \n\t end \n end \n p[1,\"bob\"].say_hi", "HEY!", ["1","bob","Ninguna de las anteriores"])
 	    @q4 = Question.new("¿Cuál es el tipo del objeto en el siguiente código Ruby? \n class Objeto \n end", "Una instancia de la clase Class", ["Una constante", "Un objeto", "Ninguna de las anteriores"])
@@ -18,11 +18,19 @@ module P5_T_34
 	      expect(Exam).to respond_to(:new)
 	      expect(@ex.top.value).to eq("Prueba 1")
 	    end
-	    it 'checking class Exam push' do
+	    it 'checking class Exam atributes' do
+	    	expect(Exam).to respond_to(:correct)
+	    	expect(Exam).to respond_to(:incorrect)
+	    	expect(Exam).to respond_to(:calification)
+	    end
+	    it 'checking class Exam push method' do
 	      expect(@ex.size).to eq(6)
 	    end
-	    it 'checking class Exam to_s' do
-	      #puts @ex
+	    it 'checking class Exam to_s method' do
+	      expect(Exam).to respond_to(:to_s)
+	    end
+	    it 'checking class Exam start method' do
+	    	expect(Exam).to respond_to(:start)
 	    end
 	  end
 	end

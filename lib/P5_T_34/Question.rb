@@ -32,8 +32,13 @@ module P5_T_34
 	    answers.each{|i| result += cont.chr + ") " + i + "\n"; cont+=1}
 	    return result
      end
+     
      def <=> (other)
          @text.size <=> other.text.size
+     end
+     
+     def == (other)
+         if (@text == other.text) ;true;else;false;end #Compara las cadenas de texto de la pregunta
      end
    end
 end
