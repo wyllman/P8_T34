@@ -81,6 +81,7 @@ module P5_T_34
 		 	expect(@l).to respond_to(:each)
 		 	expect(@l).to respond_to(:count)
 		 	expect(@l).to respond_to(:to_a)
+		 	expect(@l).to respond_to(:max)
 		 	#Pruebas
 		 	expect(@l.count).to eq(1)
 		 	expect(@l.to_a.size).to eq(1)

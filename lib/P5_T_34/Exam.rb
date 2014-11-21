@@ -52,7 +52,7 @@ module P5_T_34
             act = act.next #Siguente nodo
             cont += 1 #Siguiente respuesta
          end
-         @calification = (@correct / (self.size-1)) * 10
+         @calification = ((@correct * 10) / (self.size-1))
      end
      
      def solve_to_s (answers)
@@ -76,8 +76,8 @@ module P5_T_34
             act = act.next #Siguente nodo
             cont += 1 #Siguiente respuesta
          end
-         @calification = (@correct / (self.size-1)) * 10
-         texto += calification
+         @calification = ((@correct * 10)/ (self.size-1))
+         texto += "Calificación final: " + @calification.to_s
          return texto
      end
    end
