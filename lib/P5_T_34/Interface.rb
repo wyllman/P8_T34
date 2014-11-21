@@ -5,5 +5,15 @@ require "P5_T_34/version"
 
 
 module P5_T_34
-    #TODO: Class Interface implementation
+    class Interface
+        attr_reader :exam
+        
+        def initialize(examI)
+            @exam = examI
+        end
+        
+        def simulation(answers)
+            puts @exam.solve_to_s(answers)
+        end
+    end
 end

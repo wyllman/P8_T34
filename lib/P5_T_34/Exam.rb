@@ -20,7 +20,7 @@ module P5_T_34
        aux = "Titulo del examen: " + @top.value + "\n"
        aux += "------------------------------------------------- \n"
        act = @top.next
-       cont = 1
+       cont = 0
        while (act != nil)
 	        aux += cont.to_s + ") " + act.value.to_s
 	        aux += " \n ++++++++++++++++++++++++++++++++++ \n"
@@ -53,7 +53,32 @@ module P5_T_34
             cont += 1 #Siguiente respuesta
          end
          @calification = (@correct / (self.size-1)) * 10
-         return @calification
+     end
+     
+     def solve_to_s (answers)
+          #Inicializamos variables
+         act = @top.next
+         @correct = 0
+         @incorrect = 0
+         @calification = 0
+         cont = 0
+         #Comenzamos el examen
+         texto = "\nTitulo del examen: " + @top.value + "\n ---------------------------------------------------------------------- \n"
+         while (act != nil)
+            texto += cont.to_s + ")  " + act.value.to_s + "\n ------------------------ \n Respuesta: " + answers[cont].to_s
+            if (answers[cont] == act.value.correct) then
+                @correct += 1
+                texto += " \t ---> Respuesta Correcta\n ------------------------\n"
+            else
+                @incorrect += 1
+                texto += " \t ---> Respuesta Incorrecta\n ------------------------\n\n"
+            end
+            act = act.next #Siguente nodo
+            cont += 1 #Siguiente respuesta
+         end
+         @calification = (@correct / (self.size-1)) * 10
+         texto += calification
+         return texto
      end
    end
 end
