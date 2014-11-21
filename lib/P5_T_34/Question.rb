@@ -27,9 +27,9 @@ module P5_T_34
 
      #Convierte las preguntas y las respuestas en una cadena de texto
      def to_s
-        cont = 97
+        cont = 97 #Corresponde al char 'A'
 	    result = text + "\n"
-	    answers.each{|i| result += cont.chr + ") " + i + "\n"; cont+=1}
+	    answers.each{|i| result += cont.chr + ") " + i.to_s + "\n"; cont+=1}
 	    return result
      end
      

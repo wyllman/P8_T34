@@ -30,15 +30,29 @@ module P5_T_34
        return aux
      end
      
-     #Muestra el examen pregunta a pregunta, recibe una respuesta y calcula la calificacion obtenida
-     def start()
-         puts "Titulo del examen: " + @top.value + "\n ---------------------------------------------------------------------- \n"
+     #Muestra el examen pregunta a pregunta, recibe una respuesta y retorna la calificacion obtenida
+     def solve (answers)
+         #Inicializamos variables
          act = @top.next
-         cont = 1
+         @correct = 0
+         @incorrect = 0
+         @calification = 0
+         cont = 0
+         #Comenzamos el examen
+         puts "Titulo del examen: " + @top.value + "\n ---------------------------------------------------------------------- \n"
          while (act != nil)
-            puts cont + ")  " + act.value.to_s + "\n ------------------------ \n Respuesta: "
-            
+            puts cont + ")  " + act.value.to_s + "\n ------------------------ \n Respuesta: " + answers[cont]
+            if (answers[cont] == act.correct) then
+                @correct += 1
+                puts " \t ---> Respuesta Correcta"
+            else
+                @incorrect += 1
+                puts " \t ---> Respuesta Incorrecta"
+            end
+            act = act.next
          end
+         @calification = (correct / self.size) * 10
+         return @calification
      end
    end
 end
