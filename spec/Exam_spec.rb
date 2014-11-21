@@ -30,12 +30,11 @@ module P5_T_34
 	      expect(@ex.size).to eq(6)
 	    end
 	    it 'checking class Exam to_s method' do
-	      puts @ex
 	      expect(Exam).to respond_to(:to_s)
 	    end
 	    it 'checking class Exam solve method' do
 	    	expect(@ex).to respond_to(:solve)
-	    	#expect(@ex.solve(@anw)).to eq(10)
+	    	expect(@ex.solve(@anw)).to eq(10)
 	    end
 	  end
 	end

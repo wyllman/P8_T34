@@ -12,8 +12,6 @@ module P5_T_34
      # Crea una lista cuyo primer nodo es el nombre ó
      # identificador del examen
      def initialize(nameI)
-         @correct = 0
-         @incorrect = 0
        super
      end
      
@@ -41,19 +39,20 @@ module P5_T_34
          @calification = 0
          cont = 0
          #Comenzamos el examen
-         puts "Titulo del examen: " + @top.value + "\n ---------------------------------------------------------------------- \n"
+         #puts "Titulo del examen: " + @top.value + "\n ---------------------------------------------------------------------- \n"
          while (act != nil)
-            puts cont + ")  " + act.value.to_s + "\n ------------------------ \n Respuesta: " + answers[cont]
-            if (answers[cont] == act.correct) then
+            #puts cont + ")  " + act.value.to_s + "\n ------------------------ \n Respuesta: " + answers[cont]
+            if (answers[cont] == act.value.correct) then
                 @correct += 1
-                puts " \t ---> Respuesta Correcta"
+                #puts " \t ---> Respuesta Correcta"
             else
                 @incorrect += 1
-                puts " \t ---> Respuesta Incorrecta"
+                #puts " \t ---> Respuesta Incorrecta"
             end
-            act = act.next
+            act = act.next #Siguente nodo
+            cont += 1 #Siguiente respuesta
          end
-         @calification = (correct / self.size) * 10
+         @calification = (@correct / (self.size-1)) * 10
          return @calification
      end
    end
