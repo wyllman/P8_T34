@@ -6,6 +6,8 @@ Esta gema implementa la estructura y metodos necesarios para la construcción de
 
 [![Build Status](https://travis-ci.org/alu0100611120/P8_T34.svg?branch=master)](https://travis-ci.org/alu0100611120/P8_T34)
 
+[![Coverage Status](https://coveralls.io/repos/alu0100611120/P8_T34/badge.png)](https://coveralls.io/r/alu0100611120/P8_T34)
+
 ## Installation
 
 Add this line to your application's Gemfile:
