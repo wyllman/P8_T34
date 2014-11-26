@@ -19,22 +19,16 @@ module P5_T_34
 	  context "Class Exam test" do
 	    it 'checking class Exam initialize' do
 	      expect(Exam).to respond_to(:new)
-	      expect(@ex.top.value).to eq("Prueba 1")
+	      expect(@ex.title).to eq("Prueba 1")
 	    end
 	    it 'checking class Exam atributes' do
-	    	expect(@ex).to respond_to(:correct)
-	    	expect(@ex).to respond_to(:incorrect)
-	    	expect(@ex).to respond_to(:calification)
+	    	expect(@ex).to respond_to(:title)
 	    end
 	    it 'checking class Exam push method' do
-	      expect(@ex.size).to eq(6)
+	      expect(@ex.size).to eq(5)
 	    end
 	    it 'checking class Exam to_s method' do
 	      expect(Exam).to respond_to(:to_s)
-	    end
-	    it 'checking class Exam solve method' do
-	    	expect(@ex).to respond_to(:solve)
-	    	expect(@ex.solve(@anw)).to eq(10)
 	    end
 	  end
 	end

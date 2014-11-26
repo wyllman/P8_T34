@@ -9,10 +9,10 @@ module P5_T_34
     		end
 		context "Constructors test" do
 			it 'checking atributes' do
-        	   		expect(@q).to respond_to(:text)
+        	   	expect(@q).to respond_to(:text)
 				expect(@q).to respond_to(:correct)
 				expect(@q).to respond_to(:distractor)
-        		end
+        	end
 
 			it 'checking initialize' do
 				expect(@q.text).to eq("2+5=?")
@@ -40,6 +40,7 @@ module P5_T_34
 			it 'Basic methods' do
 		 		q2 = P5_T_34::Question.new("201+205=?","Ninguna es correcta", [22, 311, 0] )
 		 		q3 = P5_T_34::Question.new("201+205=?","Ninguna es correcta", [22, 311, 0] )
+		 		q4 = P5_T_34::Question.new("202+202=?","Ninguna es correcta", [22, 311, 0] )
 		 		#Respon_to
 		 		expect(@q).to respond_to(:==)
 		 		expect(@q).to respond_to(:>)
@@ -61,8 +62,12 @@ module P5_T_34
 		context "Comparable methods" do
 			it 'Basic methods' do
 		 		q2 = P5_T_34::Question.new("201+205=?","Ninguna es correcta", [22, 311, 0] )
+		 		q3 = P5_T_34::Question.new("201+205=?","Ninguna es correcta", [22, 311, 0] )
+		 		q4 = P5_T_34::Question.new("202+202=?","Ninguna es correcta", [22, 311, 0] )
 		 		#expect(@q).to respond_to(==)
 		 		expect(@q == q2).to eq(false)
+		 		expect(q3 == q4).to eq(false)
+		 		expect(q2 == q3).to eq(true)
 		 		expect(@q < q2).to eq(true)
 		 		expect(@q > q2).to eq(false)
 		 		expect(@q <= q2).to eq(true)

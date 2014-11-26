@@ -22,11 +22,22 @@ module P5_T_34
     	        
     	        it "Checking initialize()" do
     	            expect(Interface).to respond_to(:new)
+    	            expect(@int.exam).not_to eq(nil)
+    	            expect(@int.calification).to eq(0)
     	        end
     	        
     	        it "Checking Simulation method" do
     	            expect(@int).to respond_to(:simulation)
-    	            puts @int.simulation(@anw)
+    	            #puts @int.simulation(@anw)
+    	        end
+    	        
+    	        it "Checking Solve methods" do
+    	        	expect(@int).to respond_to(:solve)
+    	        	expect(@int).to respond_to(:solve_to_s)
+    	        	
+    	        	expect(@int.solve(@anw)).to eq(6)
+    	        	@int.solve_to_s(@anw)
+    	        	expect(@int.calification).to eq(6)
     	        end
     	    end
     	end

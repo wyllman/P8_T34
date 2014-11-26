@@ -16,10 +16,20 @@ module P5_T_34
     include Enumerable
     
     attr_reader :top, :tail, :size
-
     
-    def initialize (topI)
-      raise ArgumentError, "No puede ser nil" unless (topI != nil)
+    def initialize (topI=nil)
+      #raise ArgumentError, "No puede ser nil" unless (topI != nil)
+      if (topI != nil) 
+        init(topI)
+      else
+        @top = nil
+        @tail = @top
+        @size = 0
+      end
+    end
+    
+    def init(topI)
+      raise RuntimeError, "Lista ya iniciada." unless (@top == nil)
       @top = LList::to_node(topI)
       @tail = @top
       @size = 1
@@ -39,10 +49,14 @@ module P5_T_34
     #   varios elementos en la lista
     def push (newNode, *args)
       #raise ArgumentError, "Los elementos deben ser de tipo Node" unless newNode.is_a? Node #@top.class
-      @tail.next = LList::to_node(newNode)
-      @tail.next.prev = @tail
-      @tail = @tail.next
-      @size += 1
+      if (@top == nil) 
+        init(newNode)
+      else
+        @tail.next = LList::to_node(newNode)
+        @tail.next.prev = @tail
+        @tail = @tail.next
+        @size += 1
+      end
       args.each { |x| push(x) }
       @size
     end
@@ -50,12 +64,15 @@ module P5_T_34
     # Descripción: Método que retorna el primer elemento
     # y lo elimina de la lista
     def pop
-       aux = @top
-       @top = @top.next
-       if (@top != nil) then
+      aux = @top
+      if (aux != nil) 
+        @top = @top.next
+        @size -= 1
+        if (@top != nil) then
           @top.prev = nil
-       end
-       return aux
+        end
+      end
+      return aux
        
     end
 

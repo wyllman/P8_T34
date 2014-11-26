@@ -8,6 +8,7 @@ module P5_T_34
 	     @q = P5_T_34::Question.new("2+5=?","Ninguna es correcta", [1, 5, 6] )
 	     @n = P5_T_34::Node.new(@q, nil, nil)
 	     @l = P5_T_34::LList.new(@n)
+	     @l2 = P5_T_34::LList.new()
 	   end
 	   
 	   context "Class node test" do
@@ -34,13 +35,17 @@ module P5_T_34
 	       expect(@l).to respond_to(:top)
 	       # Modf
 	       expect(@l).to respond_to(:tail)
-	       
+	       # Modf Pract10
+	       expect(@l2).to respond_to(:init)
 	     end
 	     
 	     	it 'checking class LList initialize' do
 	       		expect(@l.top).to eq(@n)
 	       		# Modf
 	       		expect(@l.tail).to eq(@n)
+	       		# Modf Pract10
+	       		expect{ @l.init(@n) }.to raise_error(RuntimeError)
+	       		expect(@l2.init(@n)).to eq(1)
 	     	end
 	     
 			it 'Checking class LList push method' do 
@@ -51,6 +56,9 @@ module P5_T_34
 	       		# Modf
 	       		expect(@l.top.prev).to eq(nil)
 	       		expect(@l.tail.prev.value).to eq(10)
+	       		# Modf Pract10
+	       		expect(@l2.push(@n)).to eq(1)
+	       		
 			end
 
 			it 'Checking class LList to_node method' do
@@ -68,6 +76,8 @@ module P5_T_34
                expect(@l.pop).to eq(@n)
                # Modf
                expect(@l.top.prev).to eq(nil)
+               # Modf Pract10
+               expect(@l2.pop).to eq(nil)
         	end
 
         	it 'Checking class LList [] operator' do
