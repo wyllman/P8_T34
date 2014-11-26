@@ -39,7 +39,7 @@ module P5_T_34
     	        
     	        it "Checking Simulation method" do
     	            expect(@int).to respond_to(:simulation)
-    	            #puts @int.simulation(@anw)
+    	            #expect{@int.simulation(@anw)}.not_to raise_error
     	        end
     	        
     	        it "Checking Solve methods" do
@@ -47,7 +47,7 @@ module P5_T_34
     	        	expect(@int).to respond_to(:solve_to_s)
     	        	
     	        	expect(@int.solve(@anw)).to eq(6)
-    	        	@int.solve_to_s(@anw)
+    	        	expect{@int.solve_to_s(@anw)}.not_to raise_error
     	        	expect(@int.calification).to eq(6)
     	        end
     	        
@@ -56,24 +56,24 @@ module P5_T_34
     	        	expect(@int).to respond_to(:sortIQuestions)
     	        	
     	        	#Ordenamos por defecto (ascendente)
-    	        	@int.sortQuestions()
+    	        	expect{@int.sortQuestions()}.not_to raise_error
     	        	expect(@int.exam.top.value).to eq(@q5)
-    	        	@int.solve_to_s(@anw2)
+    	        	expect{@int.solve_to_s(@anw2)}.not_to raise_error
     	        	expect(@int.calification).to eq(10)
     	        	
     	        	#Ordenamos (descendente modo 1)
-    	        	@int.sortQuestions &@int.inverseProc
+    	        	expect{@int.sortQuestions &@int.inverseProc}.not_to raise_error
     	        	expect(@int.exam.top.value).to eq(@q2)
-    	        	@int.solve_to_s(@anw1)
+    	        	expect{@int.solve_to_s(@anw1)}.not_to raise_error
     	        	expect(@int.calification).to eq(10)
     	        	
     	        	#Ordenamos por defecto (ascendente)
-    	        	@int.sortQuestions()
+    	        	expect{@int.sortQuestions()}.not_to raise_error
     	        	
     	        	#Ordenamos (descendente modo 2)
-    	        	@int.sortIQuestions
-    	        	#puts @int.showQuestions()
-    	        	@int.solve_to_s(@anw1)
+    	        	expect{@int.sortIQuestions}.not_to raise_error
+    	        	expect{@int.showQuestions()}.not_to raise_error 
+    	        	expect{@int.solve_to_s(@anw1)}.not_to raise_error
     	        	expect(@int.exam.top.value).to eq(@q2)
     	        	
     	       	end
