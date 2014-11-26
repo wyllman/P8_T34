@@ -22,12 +22,13 @@ module P5_T_34
       if (topI != nil) 
         init(topI)
       else
-        @top = nil
-        @tail = @top
-        @size = 0
+        @top = nil # cabeza de la lista enlazada, de tipo interno Node
+        @tail = @top # cola de la lista enlazada, último nodo
+        @size = 0 # Número de nodos de la lista
       end
     end
     
+    # Función auxiliar para la inicialización de la lista enlazada
     def init(topI)
       raise RuntimeError, "Lista ya iniciada." unless (@top == nil)
       @top = LList::to_node(topI)

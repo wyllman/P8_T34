@@ -8,15 +8,14 @@ module P5_T_34
    # Define un tipo de LList específico para la creación de exámenes
    # y los métodos necesarios para su manejo
    class Exam < LList
-     attr_reader :title
-     # Crea una lista cuyo primer nodo es el nombre ó
-     # identificador del examen
+     attr_reader :title # Título que se le va a asignar a un exámen
+     # Crea una lista vacía con un título para el exámen
      def initialize(nameI)
-       @title = nameI
        super()
+       @title = nameI
      end
      
-     #Devuelve un examen entero, comvertido a string
+     # Devuelve un examen entero, comvertido a string
      def to_s
        aux = "Titulo del examen: " + @title + "\n"
        aux += "------------------------------------------------- \n"

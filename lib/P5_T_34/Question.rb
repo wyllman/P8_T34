@@ -1,7 +1,7 @@
 require "P5_T_34/version"
 
 module P5_T_34
-   #Clase Question implementa atributos para almacenar:
+   # Clase Question implementa atributos para almacenar:
    # una pregunta, una respuesta correcta, y varias 
    # respuestas incorrectas ó distractor
    class Question
@@ -10,9 +10,9 @@ module P5_T_34
      attr_reader :text, :correct, :distractor
 
      def initialize (textI, correctI, distractorI)
-        @text = textI
-        @correct = correctI
-        @distractor = distractorI.map{|i| i.to_s}
+        @text = textI # La pregunta
+        @correct = correctI # La respuesta correcta
+        @distractor = distractorI.map{|i| i.to_s} # Array de otras respuestas incorrectas
      end
      
      #Devuelve el texto de la pregunta
