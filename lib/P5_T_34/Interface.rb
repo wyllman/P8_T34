@@ -6,23 +6,36 @@ require "P5_T_34/version"
 
 module P5_T_34
     class Interface
-        attr_reader :exam, :calification, :correct, :incorrect
+        attr_reader :exam, :calification, :correct, :incorrect, :inverseProc
         
         def initialize(examI)
             @exam = examI
             @calification = 0;
             @correct = 0;
             @incorrect = 0;
+            @inverseProc = Proc.new { |first, second| second <=> first }
         end
         
         def simulation(answers)
             puts solve_to_s(answers)
         end
         
-        #
+        def showQuestions()
+            puts @exam
+        end 
+        
+        def sortQuestions(&sortProc)
+            @exam = @exam.sort &sortProc
+        
+        end
+        
+        def sortIQuestions()
+            @exam = sortQuestions &@inverseProc
+        end
+        
+        
         def solve (answers)
             #Inicializamos variables
-            #act = @exam.top
             @correct = 0
             @incorrect = 0
             @calification = 0
@@ -34,7 +47,6 @@ module P5_T_34
                 else
                     @incorrect += 1
                 end
-                #act = act.next #Siguente nodo
                 cont += 1 #Siguiente respuesta
             }
             @calification = ((@correct * 10) / (@exam.size))
@@ -42,25 +54,25 @@ module P5_T_34
      
         def solve_to_s (answers)
             #Inicializamos variables
-            act = @exam.top
             @correct = 0
             @incorrect = 0
             @calification = 0
             cont = 0
             #Comenzamos el examen
             texto = "\nTitulo del examen: " + @exam.title + "\n ---------------------------------------------------------------------- \n"
-            while (act != nil)
-                texto += cont.to_s + ")  " + act.value.to_s + "\n ------------------------ \n Respuesta: " + answers[cont].to_s
-                if (answers[cont] == act.value.correct) then
+            
+            @exam.each { |act|
+                texto += cont.to_s + ")  " + act.to_s + "\n ------------------------ \n Respuesta: " + answers[cont].to_s
+                if (answers[cont] == act.correct) then
                     @correct += 1
                     texto += " \t ---> Respuesta Correcta\n ------------------------\n"
                 else
                     @incorrect += 1
                     texto += " \t ---> Respuesta Incorrecta\n ------------------------\n\n"
                 end
-                act = act.next #Siguente nodo
                 cont += 1 #Siguiente respuesta
-            end
+            }
+            
             @calification = ((@correct * 10)/ (@exam.size))
             texto += "Calificación final: " + @calification.to_s
             return texto

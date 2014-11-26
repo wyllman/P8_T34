@@ -20,8 +20,17 @@ module P5_T_34
     		
     	    context 'Class Interface test' do
     	        
+    	        it "Checking class" do
+    	        	expect(Interface).to respond_to(:new)
+    	        	expect(@int).to respond_to(:exam)
+    	        	expect(@int).to respond_to(:calification)
+    	        	expect(@int).to respond_to(:correct)
+    	        	expect(@int).to respond_to(:incorrect)
+    	        	expect(@int).to respond_to(:showQuestions)
+    	       	end
+    	        
+    	        
     	        it "Checking initialize()" do
-    	            expect(Interface).to respond_to(:new)
     	            expect(@int.exam).not_to eq(nil)
     	            expect(@int.calification).to eq(0)
     	        end
@@ -39,6 +48,30 @@ module P5_T_34
     	        	@int.solve_to_s(@anw)
     	        	expect(@int.calification).to eq(6)
     	        end
+    	        
+    	        it "Checking sort question methods" do
+    	        	expect(@int).to respond_to(:sortQuestions)
+    	        	expect(@int).to respond_to(:sortIQuestions)
+    	        	
+    	        	@int.sortQuestions()
+    	        	puts @int.showQuestions()
+    	        	puts "--------------------------------------------"
+    	        	puts "--------------------------------------------"
+    	        	@int.sortQuestions &@int.inverseProc
+    	        	puts @int.showQuestions()
+    	        	
+    	        	puts "\n--------------------------------------------"
+    	        	puts "============================================"
+    	        	puts "--------------------------------------------\n"
+    	        	
+    	        	@int.sortQuestions()
+    	        	puts @int.showQuestions()
+    	        	puts "--------------------------------------------"
+    	        	puts "--------------------------------------------"
+    	        	@int.sortIQuestions 
+    	        	puts @int.showQuestions()
+    	        	
+    	       	end
     	    end
     	end
     		

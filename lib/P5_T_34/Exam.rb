@@ -22,6 +22,7 @@ module P5_T_34
        aux += "------------------------------------------------- \n"
        act = @top
        cont = 0
+       
        while (act != nil)
 	        aux += cont.to_s + ") " + act.value.to_s
 	        aux += " \n ++++++++++++++++++++++++++++++++++ \n"
