@@ -39,7 +39,7 @@ module P5_T_34
     	        
     	        it "Checking Simulation method" do
     	            expect(@int).to respond_to(:simulation)
-    	            #expect{@int.simulation(@anw)}.not_to raise_error
+    	            expect{@int.simulation(@anw)}.not_to raise_error
     	        end
     	        
     	        it "Checking Solve methods" do

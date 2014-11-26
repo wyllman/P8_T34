@@ -21,7 +21,8 @@ module P5_T_34
         
         # Muestra por pantalla la solución de un exámen paso a paso
         def simulation(answers)
-            puts solve_to_s(answers)
+            sortQuestions
+            solve_to_s(answers)
         end
         
         # Muestra las preguntas en el orden actual de corrección
