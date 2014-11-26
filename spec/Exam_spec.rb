@@ -29,6 +29,7 @@ module P5_T_34
 	    end
 	    it 'checking class Exam to_s method' do
 	      expect(Exam).to respond_to(:to_s)
+	      expect{@ex.to_s}.not_to raise_error
 	    end
 	  end
 	end
