@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class P5_T_34::LList - RDoc Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-to_node">::to_node</a>
+    
+    <li ><a href="#method-i-5B-5D">#[]</a>
+    
+    <li ><a href="#method-i-each">#each</a>
+    
+    <li ><a href="#method-i-init">#init</a>
+    
+    <li ><a href="#method-i-pop">#pop</a>
+    
+    <li ><a href="#method-i-push">#push</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-P5_T_34::LList">
+  <h1 id="class-P5_T_34::LList" class="class">
+    class P5_T_34::LList
+  </h1>
+
+  <section class="description">
+    
+<p>Descripción: Clase lista enlazada.</p>
+
+<pre>almacena un nodo top como cabeza de la 
+misma y el número de elementos que 
+contiene.</pre>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-size" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">size</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-tail" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tail</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-top" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">top</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(topI=nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/P5_T_34/LList.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> (<span class="ruby-identifier">topI</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-comment">#raise ArgumentError, &quot;No puede ser nil&quot; unless (topI != nil)</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">topI</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>) 
+    <span class="ruby-identifier">init</span>(<span class="ruby-identifier">topI</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@top</span> = <span class="ruby-keyword">nil</span> <span class="ruby-comment"># cabeza de la lista enlazada, de tipo interno Node</span>
+    <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@top</span> <span class="ruby-comment"># cola de la lista enlazada, último nodo</span>
+    <span class="ruby-ivar">@size</span> = <span class="ruby-value">0</span> <span class="ruby-comment"># Número de nodos de la lista</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-to_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_node</span><span
+            class="method-args">(value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Descripción: Método de clase encargado de convertir</p>
+
+<pre>cualquier tipo de dato de entrada a un objeto de
+tipo Node. En caso de que el objeto de entrada ya
+sea de tipo Node se retorna el mismo objeto.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="to_node-source">
+            <pre><span class="ruby-comment"># File lib/P5_T_34/LList.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_node</span> (<span class="ruby-identifier">value</span>)
+   <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Node</span>) <span class="ruby-keyword">then</span> <span class="ruby-keyword">return</span> <span class="ruby-identifier">value</span> <span class="ruby-keyword">end</span>
+   
+   <span class="ruby-keyword">return</span> <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(key)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Descripión: sobrecarga del operador de acceso []</p>
+
+<pre>para la clase</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/P5_T_34/LList.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span> (<span class="ruby-identifier">key</span>)
+   <span class="ruby-comment">#TODO</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |value| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Método each.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/P5_T_34/LList.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
+  <span class="ruby-identifier">aux</span> = <span class="ruby-identifier">top</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">aux</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">aux</span>.<span class="ruby-identifier">value</span>
+    <span class="ruby-identifier">aux</span> = <span class="ruby-identifier">aux</span>.<span class="ruby-identifier">next</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-init" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init</span><span
+            class="method-args">(topI)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Función auxiliar para la inicialización de la lista enlazada</p>
+          
+          
+
+          
+          <div class="method-source-code" id="init-source">
+            <pre><span class="ruby-comment"># File lib/P5_T_34/LList.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init</span>(<span class="ruby-identifier">topI</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-string">&quot;Lista ya iniciada.&quot;</span> <span class="ruby-keyword">unless</span> (<span class="ruby-ivar">@top</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@top</span> = <span class="ruby-constant">LList</span><span class="ruby-operator">::</span><span class="ruby-identifier">to_node</span>(<span class="ruby-identifier">topI</span>)
+  <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@top</span>
+  <span class="ruby-ivar">@size</span> = <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pop</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Descripción: Método que retorna el primer elemento y lo elimina de la lista</p>
+          
+          
+
+          
+          <div class="method-source-code" id="pop-source">
+            <pre><span class="ruby-comment"># File lib/P5_T_34/LList.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pop</span>
+  <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@top</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">aux</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>) 
+    <span class="ruby-ivar">@top</span> = <span class="ruby-ivar">@top</span>.<span class="ruby-identifier">next</span>
+    <span class="ruby-ivar">@size</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@top</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>) <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@top</span>.<span class="ruby-identifier">prev</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">aux</span>
+   
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-push" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">push</span><span
+            class="method-args">(newNode, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Descripción: Método push que permite insertar uno o</p>
+
+<pre>varios elementos en la lista</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="push-source">
+            <pre><span class="ruby-comment"># File lib/P5_T_34/LList.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">push</span> (<span class="ruby-identifier">newNode</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-comment">#raise ArgumentError, &quot;Los elementos deben ser de tipo Node&quot; unless newNode.is_a? Node #@top.class</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@top</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>) 
+    <span class="ruby-identifier">init</span>(<span class="ruby-identifier">newNode</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@tail</span>.<span class="ruby-identifier">next</span> = <span class="ruby-constant">LList</span><span class="ruby-operator">::</span><span class="ruby-identifier">to_node</span>(<span class="ruby-identifier">newNode</span>)
+    <span class="ruby-ivar">@tail</span>.<span class="ruby-identifier">next</span>.<span class="ruby-identifier">prev</span> = <span class="ruby-ivar">@tail</span>
+    <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@tail</span>.<span class="ruby-identifier">next</span>
+    <span class="ruby-ivar">@size</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">push</span>(<span class="ruby-identifier">x</span>) }
+  <span class="ruby-ivar">@size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
