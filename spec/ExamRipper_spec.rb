@@ -15,6 +15,7 @@ module P5_T_34
                 expect(@exRip).to respond_to(:question)
                 expect(@exRip).to respond_to(:right)
                 expect(@exRip).to respond_to(:wrong)
+                expect(@exRip).to respond_to(:run)
             end
             it 'checking class ExamRipper atributes' do
                    
