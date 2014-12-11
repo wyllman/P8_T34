@@ -42,6 +42,7 @@ module P5_T_34
      end
      
      def == (other)
+         return false if (other == nil)
          if (@text == other.text) ;true;else;false;end #Compara las cadenas de texto de la pregunta
      end
    end

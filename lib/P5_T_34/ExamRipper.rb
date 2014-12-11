@@ -28,13 +28,21 @@ module P5_T_34
        
         def right (answerText)
             raise RuntimeError, "Falta iniciar una pregunta." unless (@questionTmp != nil)
+            raise RuntimeError, "Ya hay una respuesta correcta definida" unless (@questionTmp.correct == nil)
             
             @questionTmp.correct = answerText
-           
         end
        
         def wrong (answerText)
-           
+            raise RuntimeError, "Falta iniciar una pregunta." unless (@questionTmp != nil)
+            raise RuntimeError, "Es una pregunta de tipo Verdadero/Falso. No se le añaden respuestas incorrectas personalizadas" unless (@questionTmp.instance_of? Question)
+        
+            if @questionTmp.distractor == nil 
+                @questionTmp.distractor = [answerText] 
+            else
+                @questionTmp.distractor << answerText
+            end
+            
         end
        
         def run
