@@ -31,6 +31,11 @@ module P5_T_34
             raise RuntimeError, "Ya hay una respuesta correcta definida" unless (@questionTmp.correct == nil)
             
             @questionTmp.correct = answerText
+            
+            if (@questionTmp.instance_of? QuestionVF)
+               @questionTmp.distractor = [!answerText ]
+            end
+            
         end
        
         def wrong (answerText)
@@ -46,7 +51,9 @@ module P5_T_34
         end
        
         def run
+            raise RuntimeError, "Falta iniciar un examen." unless (@finalExam != nil)
             
+            puts "\n" + @finalExam.to_s
         end
     end
 end

@@ -27,6 +27,9 @@ module P5_T_34
                 @exRip.title ("Prueba1")
                 expect(@exRip.finalExam.title).to eq("Prueba1")
                 
+                expect{@exRip.right ("RespuestaCorrecta 1")}.to raise_error
+                expect{@exRip.wrong ("RespuestaIncorrecta 1")}.to raise_error
+                
                 @exRip.question ("PrimeraPregunta")
                 expect(@exRip.finalExam.size).to eq(1)
                 expect(@exRip.finalExam.tail.value.correct).to eq(nil)
@@ -51,9 +54,14 @@ module P5_T_34
                 @exRip.question("SegundaPreguntaVF", true)
                 expect(@exRip.finalExam.size).to eq(2)
                 expect(@exRip.finalExam.tail.value.correct).to eq(nil)
-                #expect(@exRip.finalExam.tail.value.distractor).to eq(nil)
+                expect(@exRip.finalExam.tail.value.distractor).to eq(nil)
+                @exRip.right (true)
+                expect(@exRip.finalExam.tail.value.correct).to eq(true)
+                expect(@exRip.finalExam.tail.value.distractor[0]).to eq(false)
                 
                 expect{@exRip.wrong ("RespuestaIncorrecta 1")}.to raise_error
+                
+                expect{@exRip.run }.not_to raise_error
             end
         end
     end
