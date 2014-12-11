@@ -1,0 +1,16 @@
+title "Prueba de examen LPP"
+
+question "Pregunta 001: bla bla bla"
+right "RespuestaCorrecta 1"
+wrong "RespuestaIncorrecta 1"
+
+question "Pregunta 002(VF): bla bla", true
+right false
+
+question "Pregunta 003: bla bla"
+right "RespuestaCorrecta 1"
+wrong "RespuestaIncorrecta 1"
+wrong "RespuestaIncorrecta 2"
+wrong "RespuestaIncorrecta 3"
+
+run
