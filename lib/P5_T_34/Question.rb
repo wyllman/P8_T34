@@ -7,12 +7,16 @@ module P5_T_34
    class Question
      include Comparable  
        
-     attr_reader :text, :correct, :distractor
+     attr_accessor :text, :correct, :distractor
 
-     def initialize (textI, correctI, distractorI)
+     def initialize (textI="", correctI=nil, distractorI=nil)
         @text = textI # La pregunta
         @correct = correctI # La respuesta correcta
-        @distractor = distractorI.map{|i| i.to_s} # Array de otras respuestas incorrectas
+        if distractorI != nil
+            @distractor = distractorI.map{|i| i.to_s} # Array de otras respuestas incorrectas
+        else
+            @distractor = nil
+        end
      end
      
      #Devuelve el texto de la pregunta
