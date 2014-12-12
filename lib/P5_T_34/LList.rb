@@ -80,7 +80,6 @@ module P5_T_34
     # Descripión: sobrecarga del operador de acceso []
     #   para la clase
     def [] (key)
-       #TODO
     end
     
     # Método each.

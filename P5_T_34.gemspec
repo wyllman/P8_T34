@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = P5T34::VERSION
   spec.authors       = ["alu0100611120"]
   spec.email         = ["alu0100611120@ull.edu.es"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Framework para la creación y manupulación de examenes}
+  spec.summary       = %q{Created in c9.io}
   spec.homepage      = ""
   spec.license       = "MIT"
 
