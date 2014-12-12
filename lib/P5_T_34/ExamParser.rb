@@ -10,7 +10,7 @@ module P5_T_34
         def initialize()
             @examRip = ExamRipper.new()
         end
-        
+        # Carga el script y lo evalua/ejecuta en la clase examRipper
         def load (scriptPath)
             @examRip.instance_eval( File.read( scriptPath ) , scriptPath, 1)
         end
