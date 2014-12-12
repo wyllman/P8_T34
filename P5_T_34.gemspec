@@ -6,8 +6,8 @@ require 'P5_T_34/version'
 Gem::Specification.new do |spec|
   spec.name          = "P5_T_34"
   spec.version       = P5T34::VERSION
-  spec.authors       = ["alu0100611120"]
-  spec.email         = ["alu0100611120@ull.edu.es"]
+  spec.authors       = ["alu0100611120", "wyllman"]
+  spec.email         = ["alu0100611120@ull.edu.es", "wyllman@gmail.com"]
   spec.description   = %q{Framework para la creación y manupulación de examenes}
   spec.summary       = %q{Created in c9.io}
   spec.homepage      = ""
