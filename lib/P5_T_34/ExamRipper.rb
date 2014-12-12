@@ -7,7 +7,7 @@ module P5_T_34
     # ...
     class ExamRipper 
         attr_reader :finalExam
-        #Constructor inicializa las variables
+        # Constructor inicializa las variables
         def initialize()
             @finalExam = Exam.new()
             @questionTmp = nil
